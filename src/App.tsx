@@ -3,7 +3,7 @@ function App() {
   
   return (
     <>
-      <p className="text-red-500">Hello from Syntax Wear App!</p>
+      <p className="bg-error">Hello from Syntax Wear App!</p>
     </>
   )
 }
