@@ -1,6 +1,5 @@
-// Este componente exibe uma galeria de produtos utilizando um grid responsivo.
-// Cada card representa um produto ou modelo, com destaque para o principal.
-// O overlay do card principal exibe informações e botões de ação.
+import { Overlay } from "../Overlay";
+import { Button } from "../Button";
 import galeriaHomem from "@/assets/images/galeria-homem.jpg";
 import galeriaTenisRoxo from "@/assets/images/galeria-tenis-roxo.jpg";
 import galeriaModelo from "@/assets/images/galeria-modelo.jpg";
@@ -23,18 +22,10 @@ export const Gallery = () => {
             src={galeriaHomem}
             alt="Krypton One - Estilo urbano com atitude"
           />
-          <div className={styles.overlay}>
-            <div className={styles.textContent}>
-              <p className={styles.productName}>Krypton One</p>
-              <p className={styles.productDescription}>
-                Estilo urbano com atitude
-              </p>
-            </div>
-            <div className={styles.buttonGroup}>
-              <button className={styles.button}>Feminino</button>
-              <button className={styles.button}>Masculino</button>
-            </div>
-          </div>
+          <Overlay title='Krypton One' subtitle='Estilo Urbano com Atitude' className='inset-0 justify-center'>
+            <Button variant='secondary'>Feminino</Button>
+            <Button variant='secondary'>Masculino</Button>
+          </Overlay>
         </div>
 
         {/* Sneaker Purple - Tênis Roxo (galeria-tenis-roxo.jpg) */}
