@@ -1,4 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { products } from '../../../mocks/products'
+import { ProductList } from '../../../components/ProductList'
+
 
 export const Route = createFileRoute('/_app/products/')({
   component: RouteComponent,
@@ -6,14 +9,13 @@ export const Route = createFileRoute('/_app/products/')({
 
 function RouteComponent() {
   return (
-    <div className="container">
-      <h1 className='text-black'>OLÁ</h1>
+    <div className="container pt-44 md:pt-54 pb-10 md:px-10 mb-10 text-black bg-surface">
 
-      <p className='text-black'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed laudantium ab magnam nulla, ipsum alias asperiores praesentium optio illum aspernatur quo non ut laboriosam. Rem placeat quis suscipit est?</p>
-      <p className='text-black'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed laudantium ab magnam nulla, ipsum alias asperiores praesentium optio illum aspernatur quo non ut laboriosam. Rem placeat quis suscipit est?</p>
-      <p className='text-black'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed laudantium ab magnam nulla, ipsum alias asperiores praesentium optio illum aspernatur quo non ut laboriosam. Rem placeat quis suscipit est?</p>
-      <p className='text-black'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed laudantium ab magnam nulla, ipsum alias asperiores praesentium optio illum aspernatur quo non ut laboriosam. Rem placeat quis suscipit est?</p>
-      <p className='text-black'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis sed laudantium ab magnam nulla, ipsum alias asperiores praesentium optio illum aspernatur quo non ut laboriosam. Rem placeat quis suscipit est?</p>
+      <h1 className="text-3xl text-center mb-3">Lista de produtos</h1>
+
+      <h2 className="text-center mb-10 p-4">Conforto expecional para suas aventuras do dia-a-dia</h2>
+
+      <ProductList products={products} />
     </div>
   )
 }
