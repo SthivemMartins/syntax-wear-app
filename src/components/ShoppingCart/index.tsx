@@ -1,9 +1,3 @@
-import MensTreeDasher from '@/assets/images/tree-dasher-2-natural-black-boyal-blue.webp'
-import MensTreeRunnerNz from '@/assets/images/tree-runner-nz-weathered-brown.webp'
-import MensWoolCruiser from '@/assets/images/wool-cruiser-burgundy.webp'
-import MensWoolCruiserSlipOn from '@/assets/images/wool-cruiser-slip-on-dark-grey.webp'
-import MensWoolCruiserWaterproof from '@/assets/images/wool-cruiser-waterproof-natural-black.webp'
-
 import IconCart from "@/assets/images/icon-cart.png"
 import { useContext, useState } from "react";
 import { formatCurrency } from '../../utils/format-currency'
@@ -18,9 +12,17 @@ export const ShoppingCart = () => {
 
     return (
         <>
-            <button className="cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
-                <img src={IconCart} alt="Ícone carrinho de compras" />
-            </button>
+            <div className="relative">
+                <button className="cursor-pointer" onClick={() => setCartIsOpen(!cartIsOpen)}>
+                    <img src={IconCart} alt="Ícone carrinho de compras" />
+                </button>
+                
+                {cart.length > 0 && (
+                    <div className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                        {cart.length}
+                    </div>
+                )}
+            </div>
 
 
             {/* Overlay */}
