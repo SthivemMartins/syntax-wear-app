@@ -3,7 +3,7 @@ import OurStoresBanner from '@/assets/images/banner-our-stores.png';
 import OurStoreImg1 from '@/assets/images/loja-1.png';
 import OurStoreImg2 from '@/assets/images/loja-2.png';
 
-export const Route = createFileRoute('/_app/our-store/')({
+export const Route = createFileRoute('/_app/our-stores/')({
   component: RouteComponent,
 })
 

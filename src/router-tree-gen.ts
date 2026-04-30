@@ -14,7 +14,8 @@ import { Route as AppIndexRouteImport } from './pages/_app/index'
 import { Route as AuthSignUpRouteImport } from './pages/_auth/sign-up'
 import { Route as AuthSignInRouteImport } from './pages/_auth/sign-in'
 import { Route as AppProductsIndexRouteImport } from './pages/_app/products/index'
-import { Route as AppOurStoreIndexRouteImport } from './pages/_app/our-store/index'
+import { Route as AppOurStoresIndexRouteImport } from './pages/_app/our-stores/index'
+import { Route as AppAboutIndexRouteImport } from './pages/_app/about/index'
 import { Route as AppProductsProductIdRouteImport } from './pages/_app/products/$productId'
 
 const AppLayoutRoute = AppLayoutRouteImport.update({
@@ -41,9 +42,14 @@ const AppProductsIndexRoute = AppProductsIndexRouteImport.update({
   path: '/products/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
-const AppOurStoreIndexRoute = AppOurStoreIndexRouteImport.update({
-  id: '/our-store/',
-  path: '/our-store/',
+const AppOurStoresIndexRoute = AppOurStoresIndexRouteImport.update({
+  id: '/our-stores/',
+  path: '/our-stores/',
+  getParentRoute: () => AppLayoutRoute,
+} as any)
+const AppAboutIndexRoute = AppAboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
 const AppProductsProductIdRoute = AppProductsProductIdRouteImport.update({
@@ -57,7 +63,8 @@ export interface FileRoutesByFullPath {
   '/sign-up': typeof AuthSignUpRoute
   '/': typeof AppIndexRoute
   '/products/$productId': typeof AppProductsProductIdRoute
-  '/our-store': typeof AppOurStoreIndexRoute
+  '/about': typeof AppAboutIndexRoute
+  '/our-stores': typeof AppOurStoresIndexRoute
   '/products': typeof AppProductsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -65,7 +72,8 @@ export interface FileRoutesByTo {
   '/sign-up': typeof AuthSignUpRoute
   '/': typeof AppIndexRoute
   '/products/$productId': typeof AppProductsProductIdRoute
-  '/our-store': typeof AppOurStoreIndexRoute
+  '/about': typeof AppAboutIndexRoute
+  '/our-stores': typeof AppOurStoresIndexRoute
   '/products': typeof AppProductsIndexRoute
 }
 export interface FileRoutesById {
@@ -75,7 +83,8 @@ export interface FileRoutesById {
   '/_auth/sign-up': typeof AuthSignUpRoute
   '/_app/': typeof AppIndexRoute
   '/_app/products/$productId': typeof AppProductsProductIdRoute
-  '/_app/our-store/': typeof AppOurStoreIndexRoute
+  '/_app/about/': typeof AppAboutIndexRoute
+  '/_app/our-stores/': typeof AppOurStoresIndexRoute
   '/_app/products/': typeof AppProductsIndexRoute
 }
 export interface FileRouteTypes {
@@ -85,7 +94,8 @@ export interface FileRouteTypes {
     | '/sign-up'
     | '/'
     | '/products/$productId'
-    | '/our-store'
+    | '/about'
+    | '/our-stores'
     | '/products'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -93,7 +103,8 @@ export interface FileRouteTypes {
     | '/sign-up'
     | '/'
     | '/products/$productId'
-    | '/our-store'
+    | '/about'
+    | '/our-stores'
     | '/products'
   id:
     | '__root__'
@@ -102,7 +113,8 @@ export interface FileRouteTypes {
     | '/_auth/sign-up'
     | '/_app/'
     | '/_app/products/$productId'
-    | '/_app/our-store/'
+    | '/_app/about/'
+    | '/_app/our-stores/'
     | '/_app/products/'
   fileRoutesById: FileRoutesById
 }
@@ -149,11 +161,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppProductsIndexRouteImport
       parentRoute: typeof AppLayoutRoute
     }
-    '/_app/our-store/': {
-      id: '/_app/our-store/'
-      path: '/our-store'
-      fullPath: '/our-store'
-      preLoaderRoute: typeof AppOurStoreIndexRouteImport
+    '/_app/our-stores/': {
+      id: '/_app/our-stores/'
+      path: '/our-stores'
+      fullPath: '/our-stores'
+      preLoaderRoute: typeof AppOurStoresIndexRouteImport
+      parentRoute: typeof AppLayoutRoute
+    }
+    '/_app/about/': {
+      id: '/_app/about/'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AppAboutIndexRouteImport
       parentRoute: typeof AppLayoutRoute
     }
     '/_app/products/$productId': {
@@ -169,14 +188,16 @@ declare module '@tanstack/react-router' {
 interface AppLayoutRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppProductsProductIdRoute: typeof AppProductsProductIdRoute
-  AppOurStoreIndexRoute: typeof AppOurStoreIndexRoute
+  AppAboutIndexRoute: typeof AppAboutIndexRoute
+  AppOurStoresIndexRoute: typeof AppOurStoresIndexRoute
   AppProductsIndexRoute: typeof AppProductsIndexRoute
 }
 
 const AppLayoutRouteChildren: AppLayoutRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppProductsProductIdRoute: AppProductsProductIdRoute,
-  AppOurStoreIndexRoute: AppOurStoreIndexRoute,
+  AppAboutIndexRoute: AppAboutIndexRoute,
+  AppOurStoresIndexRoute: AppOurStoresIndexRoute,
   AppProductsIndexRoute: AppProductsIndexRoute,
 }
 
