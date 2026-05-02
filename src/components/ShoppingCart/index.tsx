@@ -45,8 +45,8 @@ export const ShoppingCart = () => {
                                 <button className="self-end text-xs cursor-pointer" onClick={() => removeFromCart(product.id)} >X</button>
 
                                 <div className="flex gap-4">
-                                    <img src={product.image} alt={product.name} className="w-25 h16" />
-                                    {/* o tamanho correto é "w-16 h-16" */}
+                                    <img src={product.image} alt={product.name} className="w-18 h-20" />
+                                    {/* o tamanho inicial é "w-16 h-16" */}
 
                                     <div className="flex flex-col items-start">
                                         <p className="mb-1 text-sm">{product.name}</p>
