@@ -24,7 +24,7 @@ export const MenuMobile = ({ navLinks }: MenuMobileProps) => {
             <div className={`${menuIsOpen ? "bg-black/70 visible" : "bg-transparent invisible"} fixed top-0 bottom-0 left-0 right-0 z-30`} onClick={() => setMenuIsOpen(!menuIsOpen)} >
 
                 {/* Drawer */}
-                <div className={`${menuIsOpen ? "translate-x-0" : "-translate-x-full"} absolute top-0 bottom-0 bg-white pt-6 transition-all duration-500 ease-in-out w-100`} onClick={(e) => e.stopPropagation()}>
+                <div className={`${menuIsOpen ? "translate-x-0" : "-translate-x-full"} absolute top-0 bottom-0 bg-white pt-6 transition-all duration-500 ease-in-out w-full`} onClick={(e) => e.stopPropagation()}>
 
                     <header className="bg-black py-5 px-5 text-white">
                         <nav className="flex justify-between">
