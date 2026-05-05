@@ -50,11 +50,7 @@ export const Header = () => {
                   <img src={IconUser} alt="Ícone de login" />
                 </Link>
               </li>
-              <li className="hidden lg:block">
-                <Link to="/about">
-                  <img src={IconAbout} alt="Ícone de sobre" />
-                </Link>
-              </li>
+              
               <li>
                 <ShoppingCart />
               </li>
