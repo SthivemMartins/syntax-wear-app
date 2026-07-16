@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Analytics } from "@vercel/analytics/next"
 import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
@@ -15,6 +16,7 @@ function RootComponent() {
     <React.Fragment>
       <HeadContent/>
       <Outlet />
+      <Analytics />
     </React.Fragment>
   )
 }
