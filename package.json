@@ -12,8 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/vite": "^4.1.17",
-    "@tanstack/react-router": "^1.136.1",
-    "@vercel/analytics": "^2.0.1",
+    "@tanstack/react-router": "^1.136.1",    
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.66.0",
