@@ -7,6 +7,7 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 // Importa a "árvore de rotas", um arquivo gerado automaticamente que lista todas as páginas do app.
 import { routeTree } from "./router-tree-gen";
 import { CartProvider } from "./contexts/CartProvider";
+import { inject } from "@vercel/analytics";
 
 // Cria a instância do roteador, passando a lista de todas as rotas disponíveis.
 const router = createRouter({ routeTree });
@@ -20,12 +21,15 @@ declare module "@tanstack/react-router" {
   }
 }
 
+// Injeta o Vercel Web Analytics
+inject({ mode: "auto" });
+
 // --- Componente Principal da Página ---
 // Este componente `App` monta a estrutura da página principal (homepage).
 function App() {
   return (
     <CartProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </CartProvider>
   );
 }
